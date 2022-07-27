@@ -1,0 +1,137 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20%;
+}
+
+.logo {
+    padding-left: 5%;
+}
+
+hr {
+    border: 0.5px solid rgba(151, 151, 151, 0.5);
+}
+
+header hr {
+    width: 25%;
+}
+
+.header-nav {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(35px);
+    width: 60%;
+}
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-nav li,
+.header-nav a {
+    color: #FFF;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.15rem;
+    padding: 2.5rem 0;
+}
+
+.header-nav .num {
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+.selected {
+    border-bottom: solid #FFF;
+}
+
+.header-nav .not-selected:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hamb,
+.header-nav-hamb {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1250px) {
+    .header-nav .num {
+        margin-right: 0;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media only screen and (max-width: 1023px) {
+    header {
+        height: auto;
+        padding-bottom: 5%;
+    }
+
+    header hr {
+        visibility: hidden;
+    }
+
+    .header-nav .num {
+        display: none;
+    }
+
+    .header-nav .not-selected:hover {
+        border-bottom: none;
+    }
+}
+
+/* Mobile (0 - 767px) */
+@media only screen and (max-width: 767px) {
+    header {
+        height: 12%;
+    }
+
+    .logo,
+    .hamb {
+        padding: 8%;
+    }
+
+    .logo {
+        height: 45px;
+        width: 45px;
+    }
+
+    header hr,
+    .header-nav {
+        display: none;
+    }
+
+    .hamb,
+    .hamb-close,
+    .header-nav-hamb ul {
+        display: block;
+    }
+
+    .header-nav-hamb {
+        backdrop-filter: blur(30px);
+        display: none;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .hamb-close {
+        margin-left: auto;
+        padding: 15%;
+    }
+
+    .header-nav-hamb li {
+        font-size: 1.1rem;
+        padding: 10%;
+    }
+
+    .header-nav-hamb .num {
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+
+    .header-nav-hamb .selected {
+        border-bottom: none;
+    }
+}

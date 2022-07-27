@@ -1,0 +1,237 @@
+body {
+    background: url("../assets/technology/background-technology-desktop.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+.tablet-mobile {
+    display: none;
+}
+
+main {
+    display: grid;
+    grid-auto-rows: 3rem auto;
+    height: 80%;
+    padding: 0 3%;
+}
+
+.page-header {
+    color: #FFF;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.75rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    letter-spacing: 0.3rem;
+    margin: auto 0;
+    padding-left: 5%;
+}
+
+.page-header .num {
+    font-weight: 700;
+    margin-right: 1rem;
+    opacity: 0.25;
+}
+
+.content-nav,
+.content,
+.content-image,
+.content-nav li {
+    display: flex;
+}
+
+.content-nav {
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.content-nav li {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #FFF;
+    font-family: 'Bellefair', serif;
+    font-size: 2rem;
+    height: 80px;
+    width: 80px;
+}
+
+.content-nav .selected {
+    background-color: #FFF;
+    color: #0B0D17;
+}
+
+.content-nav .not-selected:hover {
+    border: 1px solid #FFF;
+}
+
+.content {
+    align-items: center;
+    justify-content: flex-start;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding-left: 10%;
+}
+
+.content-intro {
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.17rem;
+}
+
+.content-term {
+    color: #FFF;
+    font-size: 3.5rem;
+    font-family: 'Bellefair', serif;
+    padding: 3% 0;
+}
+
+.content-desc {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    max-width: 29rem;
+    text-transform: none;
+}
+
+.content-image {
+    align-items: center;
+    justify-content: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.content-image img {
+    max-height: 80%;
+}
+
+/* (1023px - 1700px) */
+@media only screen and (max-width: 1700px) {
+    main {
+        padding-right: 0;
+    }
+
+    .content-image {
+        justify-content: flex-end;
+    }
+
+    .content-image img {
+        width: 80%;
+    }
+}
+
+/* (1023px - 1300px) */
+@media only screen and (max-width: 1300px) {
+    .content-nav li {
+        font-size: 1.5rem;
+        height: 70px;
+        width: 70px;
+    }
+
+    .content-term {
+        font-size: 3rem;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media only screen and (max-width: 1023px) {
+    body {
+        background: url("../assets/technology/background-technology-tablet.jpg") no-repeat center fixed;
+        background-size: cover;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .tablet-mobile,
+    .content,
+    main {
+        display: block;
+    }
+
+    main {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .page-header {
+        font-size: 1.25rem;
+        padding-bottom: 3rem;
+        text-align: left;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+
+    .content-nav {
+        flex-direction: row;
+        gap: 1rem;
+        margin: 3rem;
+    }
+
+    .content-nav li {
+        height: 60px;
+        width: 60px;
+    }
+
+    .content-desc {
+        margin: auto;
+        padding-bottom: 3rem;
+    }
+
+    .content img {
+        height: 310px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .content-nav .not-selected:hover {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+}
+
+/* Mobile (0 - 767px) */
+@media only screen and (max-width: 767px) {
+    body {
+        background: url("../assets/technology/background-technology-mobile.jpg") no-repeat center fixed;
+        background-size: cover;
+    }
+
+    .page-header {
+        text-align: center;
+        padding: 0 0 2rem 0;
+    }
+
+    .content img {
+        height: 170px;
+    }
+
+    .content-nav {
+        margin: 2rem;
+    }
+
+    .content-nav li {
+        font-size: 1.1rem;
+        height: 40px;
+        width: 40px;
+    }
+
+    .content-term {
+        font-size: 1.7rem;
+    }
+
+    .content-desc {
+        padding: 0 1rem 3rem;
+    }
+}
