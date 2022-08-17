@@ -68,7 +68,7 @@ main {
     color: #0B0D17;
 }
 
-.content-nav .not-selected:hover {
+.content-nav :not(.selected):hover {
     border: 1px solid #FFF;
 }
 
@@ -196,7 +196,7 @@ main {
         object-fit: cover;
     }
 
-    .content-nav .not-selected:hover {
+    .content-nav :not(.selected):hover {
         border: 1px solid rgba(255, 255, 255, 0.25);
     }
 }

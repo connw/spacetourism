@@ -62,7 +62,7 @@ main {
     margin-left: 0;
 }
 
-.content-nav .not-selected:hover {
+.content-nav :not(.selected):hover {
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -153,6 +153,10 @@ main {
     .content hr {
         margin: 1rem auto;
         max-width: 37rem;
+    }
+
+    .content-nav :not(.selected):hover {
+        border-bottom: none;
     }
 }
 

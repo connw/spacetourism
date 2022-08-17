@@ -22,7 +22,7 @@ main {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 2;  
+    grid-row-end: 2;
     margin: auto 0;
     padding-left: 5%;
 }
@@ -45,7 +45,7 @@ main {
     font-family: 'Bellefair', serif;
     font-size: 3rem;
     letter-spacing: 0;
-    padding: 1rem 0;   
+    padding: 1rem 0;
 }
 
 .content-desc {
@@ -78,7 +78,7 @@ main {
     background-color: #FFF;
 }
 
-.content-nav .not-selected:hover {
+.content-nav :not(.selected):hover {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -91,7 +91,7 @@ main {
     .page-header {
         padding-left: 0;
     }
-    
+
     .page-header .num {
         margin-right: 1rem;
     }
@@ -100,8 +100,9 @@ main {
 /* Tablet (768px - 1023px) */
 @media only screen and (max-width: 1023px) {
     body {
-        background: url("../assets/crew/background-crew-tablet.jpg") no-repeat center fixed;        background-size: cover; 
-        background-size: cover; 
+        background: url("../assets/crew/background-crew-tablet.jpg") no-repeat center fixed;
+        background-size: cover;
+        background-size: cover;
     }
 
     main,
@@ -120,7 +121,7 @@ main {
         padding-bottom: 2rem;
         text-align: left;
     }
-    
+
     .content-crew-title {
         font-size: 1.5rem;
     }
@@ -148,7 +149,7 @@ main {
         width: 10px;
     }
 
-    .content-nav .not-selected:hover {
+    .content-nav :not(.selected):hover {
         background-color: rgba(255, 255, 255, 0.2);
     }
 
@@ -161,9 +162,9 @@ main {
 @media only screen and (max-width: 767px) {
     body {
         background: url("../assets/crew/background-crew-mobile.jpg") no-repeat center fixed;
-        background-size: cover; 
+        background-size: cover;
     }
-    
+
     .desktop-tablet {
         display: none;
     }
@@ -175,9 +176,9 @@ main {
     .page-header {
         text-align: center;
     }
-    
+
     .content-image {
-        border-bottom: 0.5px solid  rgba(151, 151, 151, 0.5);
+        border-bottom: 0.5px solid rgba(151, 151, 151, 0.5);
         width: 90%;
     }
 
