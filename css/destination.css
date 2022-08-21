@@ -1,144 +1,105 @@
 body {
-    background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center fixed;
+    background: url("../assets/destination/background-destination-mobile.jpg") no-repeat center fixed;
     background-size: cover;
 }
 
 main {
-    display: grid;
-    grid-auto-rows: 50px auto;
-    height: 80%;
-    padding: 0 3%;
+    text-align: center;
+    padding: 5% 0;
 }
 
 .page-header {
-    color: #FFF;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.75rem;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    letter-spacing: 0.3rem;
-    margin: auto 0;
-    padding-left: 5%;
-}
-
-.page-header .num {
-    opacity: 0.25;
-    font-weight: 700;
-    margin-right: 1rem;
-}
-
-.content {
-    margin: auto;
-    padding-bottom: 2rem;
-}
-
-.content-image {
-    margin: auto;
+    font-size: 1rem;
+    letter-spacing: 2.7px;
 }
 
 .content-image img {
-    max-width: 90%;
+    display: block;
+    margin: auto;
+    padding: 2rem 0;
+    width: 10rem;
 }
 
 .content-nav {
+    color: #D0D6F9;
     display: flex;
-    padding-bottom: 2rem;
-}
-
-.content-nav li {
+    justify-content: center;
+    gap: 5%;
     font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: 0.15rem;
+    font-size: 0.8rem;
+    letter-spacing: 2.36px;
+}
+
+.content-nav-item {
     padding-bottom: 1rem;
-    margin-left: 2rem;
 }
 
-.content-nav .selected {
+.content-nav-item.selected {
+    border-bottom: 3px solid #FFF;
     color: #FFF;
-}
-
-.content-nav>li:first-child {
-    margin-left: 0;
-}
-
-.content-nav :not(.selected):hover {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .content-header {
-    color: #FFF;
-    font-size: 6.2rem;
+    font-size: 3.5rem;
     font-family: 'Bellefair', serif;
+    padding: 1.5rem 0;
 }
 
 .content-desc {
-    font-size: 1.1rem;
-    line-height: 2rem;
-    max-width: 27rem;
-    padding: 1.5rem 0;
-    text-transform: none;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    max-width: 19rem;
+    margin: auto;
+    padding: 0 1rem;
 }
 
 .content hr {
-    margin: 1rem 0;
-    min-width: 27rem;
-}
-
-.content-fact {
-    display: inline-block;
-    margin: 1rem 0;
-}
-
-.distance {
-    padding-right: 6rem;
+    color: #383B4B;
+    margin: 2rem auto;
+    width: 90%;
 }
 
 .content-fact-property {
+    color: #D0D6F9;
+    font-size: 0.8rem;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.88rem;
-    letter-spacing: 0.15rem;
-    padding-bottom: 0.5rem;
+    letter-spacing: 2.36px;
+    padding-bottom: 1rem;
 }
 
 .content-fact-value {
-    color: #FFF;
     font-family: 'Bellefair', serif;
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    padding-bottom: 2rem;
 }
 
-/* (1023px - 1250px) */
-@media only screen and (max-width: 1250px) {
-    h1 .num {
-        margin-right: 1rem;
-    }
-}
-
-/* Tablet (768px - 1023px) */
-@media only screen and (max-width: 1023px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
     body {
         background: url("../assets/destination/background-destination-tablet.jpg") no-repeat center fixed;
         background-size: cover;
     }
 
-    main {
-        display: block;
-        text-align: center;
-    }
-
     .page-header {
         font-size: 1.25rem;
+        padding-left: 10%;
         text-align: left;
+
     }
 
     .content-image img {
-        width: 300px;
+        width: 18rem;
+        height: auto;
         padding: 3rem 0;
     }
 
     .content-nav {
-        align-items: center;
-        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .content-nav-item:not(.selected):hover {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
     }
 
     .content-header {
@@ -146,54 +107,85 @@ main {
     }
 
     .content-desc {
-        margin: auto;
-        max-width: 37rem;
-    }
-
-    .content hr {
-        margin: 1rem auto;
-        max-width: 37rem;
-    }
-
-    .content-nav :not(.selected):hover {
-        border-bottom: none;
-    }
-}
-
-/* Mobile (0 - 767px) */
-@media only screen and (max-width: 767px) {
-    .content-image img {
-        width: 170px;
-        height: 170px;
-    }
-
-    .page-header {
-        text-align: center;
-        padding-left: 0;
-    }
-
-    .content-header {
-        font-size: 3.5rem;
-    }
-
-    .content-desc {
-        line-height: 1.8rem;
-        max-width: 22rem;
-        padding: 1rem 0 0;
-    }
-
-    .content hr {
-        margin: 2rem auto;
-        min-width: 0;
-        width: 90%;
+        font-size: 1rem;
+        line-height: 1.75rem;
+        min-width: 36rem;
     }
 
     .content-fact {
-        display: block;
-        padding-right: 0;
+        display: inline-block;
     }
 
-    .distance {
-        padding-bottom: 1rem;
+    .content-fact.distance {
+        padding-right: 15%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    body {
+        background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center fixed;
+        background-size: cover;
+    }
+
+    main {
+        display: grid;
+        gap: 0 10%;
+        grid-auto-rows: 5rem auto;
+        text-align: left;
+    }
+
+    .page-header {
+        font-size: 1.75rem;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        letter-spacing: 4.72px;
+    }
+
+    .content-image {
+        grid-column: 1/2 ;
+        grid-row: 2/3;
+        justify-self: end;
+    }
+
+    .content-image img {
+        width: 21rem;
+        height: auto;
+    }
+
+    .content {
+        align-self: center;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .content-nav {
+        justify-content: flex-start;
+    }
+
+    .content-desc {
+        margin: 0;
+        min-width: 25rem;
+        padding: 0;
+    }
+
+    .content hr {
+        margin: 2rem 0;
+        width: 25rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    main {
+        grid-auto-rows: 3rem auto;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1600px) {
+    .content-image img {
+        width: 27rem;
+        height: auto;
     }
 }

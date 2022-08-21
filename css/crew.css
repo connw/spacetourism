@@ -1,124 +1,95 @@
 body {
-    background: url("../assets/crew/background-crew-desktop.jpg") no-repeat center fixed;
+    background: url("../assets/crew/background-crew-mobile.jpg") no-repeat center fixed;
     background-size: cover;
 }
 
-main {
-    display: grid;
-    grid-auto-rows: 3rem auto;
-    padding: 0 5%;
-    height: 80%;
+.desktop,
+.tablet {
+    display: none;
 }
 
-.content {
-    margin: auto;
+.mobile,
+.tablet {
+    text-align: center;
+    padding-bottom: 2rem;
 }
 
 .page-header {
-    color: #FFF;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.75rem;
-    letter-spacing: 0.3rem;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin: auto 0;
-    padding-left: 5%;
-}
-
-.page-header .num {
-    opacity: 0.25;
-    font-weight: 700;
-    margin-right: 1rem;
-}
-
-.content-crew-title {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 2rem;
-    font-family: 'Bellefair', serif;
-    letter-spacing: 0;
-}
-
-.content-crew-name {
-    color: #FFF;
-    font-family: 'Bellefair', serif;
-    font-size: 3rem;
-    letter-spacing: 0;
-    padding: 1rem 0;
-}
-
-.content-desc {
-    max-width: 27rem;
-    font-size: 1.1rem;
-    line-height: 2rem;
-    text-transform: none;
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+    padding-bottom: 2rem;
 }
 
 .content-image {
-    max-width: 70%;
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.5);
     margin: auto;
+    width: 80%;
+}
+
+.content-image img {
+    margin: auto;
+    width: auto;
+    height: 13rem;
 }
 
 .content-nav {
     display: flex;
-    gap: 2rem;
-    padding-top: 8rem;
+    justify-content: center;
+    gap: 5%;
+    padding: 2rem 0;
 }
 
-.content-nav li {
+.content-nav-item {
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    width: 0.6rem;
+    height: 0.6rem;
 }
 
-.content-nav .selected {
+.content-nav-item.selected {
     background-color: #FFF;
 }
 
-.content-nav :not(.selected):hover {
-    background-color: rgba(255, 255, 255, 0.5);
+.content-crew-title {
+    font-family: 'Bellefair', serif;
+    opacity: 0.5;
 }
 
-.mobile {
-    display: none;
+.content-crew-name {
+    font-size: 1.5rem;
+    font-family: 'Bellefair', serif;
+    padding: 1rem 0;
 }
 
-/* (1023px - 1250px) */
-@media only screen and (max-width: 1250px) {
-    .page-header {
-        padding-left: 0;
-    }
-
-    .page-header .num {
-        margin-right: 1rem;
-    }
+.content-desc {
+    color: #D0D6F9;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin: auto;
+    max-width: 19rem;
 }
 
-/* Tablet (768px - 1023px) */
-@media only screen and (max-width: 1023px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
     body {
         background: url("../assets/crew/background-crew-tablet.jpg") no-repeat center fixed;
         background-size: cover;
-        background-size: cover;
     }
 
-    main,
-    .content {
+    .tablet {
         display: block;
+        padding: 0;
     }
 
-    main {
-        text-align: center;
-        height: auto;
+    .mobile {
+        display: none;
     }
 
     .page-header {
         font-size: 1.25rem;
-        letter-spacing: 0.21rem;
-        padding-bottom: 2rem;
+        letter-spacing: 3.38px;
+        padding: 5%;
         text-align: left;
     }
 
@@ -128,70 +99,108 @@ main {
 
     .content-crew-name {
         font-size: 2.5rem;
-        padding: 1rem 0;
     }
 
     .content-desc {
         font-size: 1rem;
-        line-height: 1.75rem;
-        margin: auto;
-        max-width: 29rem;
+        min-width: 29rem;
+    }
+
+    .content-image {
+        border-bottom: none;
+        height: 35rem;
+        width: auto;
     }
 
     .content-nav {
-        gap: 1rem;
-        justify-content: center;
-        padding: 2rem 0;
+        gap: 3%;
     }
 
-    .content-nav li {
-        height: 10px;
-        width: 10px;
-    }
-
-    .content-nav :not(.selected):hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .content-image {
-        width: 55%;
+    .content-nav-item:not(.selected):hover {
+        background-color: rgba(255, 255, 255, 0.5);
     }
 }
 
-/* Mobile (0 - 767px) */
-@media only screen and (max-width: 767px) {
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
     body {
-        background: url("../assets/crew/background-crew-mobile.jpg") no-repeat center fixed;
+        background: url("../assets/crew/background-crew-desktop.jpg") no-repeat center fixed;
         background-size: cover;
     }
 
-    .desktop-tablet {
-        display: none;
-    }
+    .desktop {
+        display: grid;
+        grid-auto-rows: 3rem auto;
+        padding: 5% 5% 2%;
 
-    .mobile {
-        display: inherit;
     }
 
     .page-header {
-        text-align: center;
+        font-size: 1.75rem;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        letter-spacing: 4.72px;
+        padding: 0;
     }
 
-    .content-image {
-        border-bottom: 0.5px solid rgba(151, 151, 151, 0.5);
-        width: 90%;
+    .content {
+        align-self: flex-end;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        text-align: left;
     }
 
-    .content-image img {
-        width: 50%;
+    .content-crew-title {
+        font-size: 2rem;
     }
 
     .content-crew-name {
-        font-size: 1.7rem;
+        font-size: 2.8rem;
+        padding: 1rem 0;
     }
 
     .content-desc {
-        max-width: 23rem;
-        padding-bottom: 5rem;
+        font-size: 1.1rem;
+        line-height: 2rem;
+        margin: 0;
+        min-width: 28rem;
+    }
+
+    .content-nav {
+        gap: 5%;
+        justify-content: flex-start;
+        padding: 5rem 0 2rem;
+    }
+
+    .content-nav-item {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+    .content-image {
+        grid-column: 2/3;
+        grid-row: 1/3;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .desktop {
+        gap: 0 10%;
+    }
+
+    .content-crew-name {
+        font-size: 3.5rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1600px) {
+    .desktop {
+        padding: 5%;
+    }
+
+    .content {
+        justify-self: flex-end;
     }
 }

@@ -1,137 +1,139 @@
 header {
+    color: #FFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 20%;
+    font-family: 'Barlow Condensed', sans-serif;
+    height: 100px;
+    letter-spacing: 0.15rem;
 }
 
 .logo {
-    padding-left: 5%;
+    padding-left: 10%;
 }
 
-hr {
-    border: 0.5px solid rgba(151, 151, 151, 0.5);
+.hamb {
+    height: 21px;
+    width: 24px;
+    padding-right: 10%;
 }
 
-header hr {
-    width: 25%;
-}
-
-.header-nav {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(35px);
-    width: 60%;
-}
-
-.header-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.header-nav li,
-.header-nav a {
-    color: #FFF;
-    font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: 0.15rem;
-    padding: 2.5rem 0;
-}
-
-.header-nav .num {
-    font-weight: 700;
-    margin-right: 1rem;
-}
-
-.selected {
-    border-bottom: solid #FFF;
-}
-
-.header-nav .not-selected:hover {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.hamb,
 .header-nav-hamb {
+    backdrop-filter: blur(30px);
+    display: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    z-index: 2;
+}
+
+.hamb-close {
+    margin-left: auto;
+    padding: 15%;
+}
+
+.hamb-close,
+.header-nav-hamb ul {
+    display: block;
+}
+
+.header-nav-hamb li {
+    padding: 10%;
+}
+
+.num {
+    font-weight: 700;
+    margin-right: 0.3rem;
+}
+
+header hr,
+.header-nav {
     display: none;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1250px) {
-    .header-nav .num {
-        margin-right: 0;
-    }
+.show {
+    display: block;
 }
 
-/* Tablet (768px - 1023px) */
-@media only screen and (max-width: 1023px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .logo {
+        padding-left: 5%;
+    }
+
     header {
         height: auto;
-        padding-bottom: 5%;
-    }
-
-    header hr {
-        visibility: hidden;
-    }
-
-    .header-nav .num {
-        display: none;
-    }
-
-    .header-nav .not-selected:hover {
-        border-bottom: none;
-    }
-}
-
-/* Mobile (0 - 767px) */
-@media only screen and (max-width: 767px) {
-    header {
-        height: 12%;
-    }
-
-    .logo,
-    .hamb {
-        padding: 8%;
-    }
-
-    .logo {
-        height: 45px;
-        width: 45px;
-    }
-
-    header hr,
-    .header-nav {
-        display: none;
     }
 
     .hamb,
-    .hamb-close,
-    .header-nav-hamb ul {
-        display: block;
-    }
-
     .header-nav-hamb {
-        backdrop-filter: blur(30px);
         display: none;
+    }
+
+    .header-nav {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(35px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
+        width: 60%;
+        font-size: 0.8rem;
+    }
+    
+    .header-nav ul {
+        display: flex;
+        gap: 20%;
+        justify-content: space-evenly;
     }
 
-    .hamb-close {
-        margin-left: auto;
-        padding: 15%;
+    .header-nav li {
+        padding: 15% 0;
+    }
+    
+    .header-nav .num {
+        display: none;
     }
 
-    .header-nav-hamb li {
-        font-size: 1.1rem;
-        padding: 10%;
+    .selected {
+        border-bottom: solid #FFF;
     }
 
-    .header-nav-hamb .num {
+    .header-nav li:not(.selected):hover {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    header {
+        margin-top: 2.5rem;
+    }
+
+    header hr {
+        border: 0.5px solid rgba(151, 151, 151, 0.5);
+        display: block;
+        width: 25%;
+    }
+
+    .header-nav {
+        font-size: 1rem;
+    }
+
+    .header-nav ul {
+        gap: 0%;
+        width: 100%;
+    }
+
+    .header-nav li {
+        padding: 5% 0;
+    }
+
+    .header-nav .num {
         display: inline-block;
-        margin-right: 0.5rem;
-    }
-
-    .header-nav-hamb .selected {
-        border-bottom: none;
+        font-weight: 700;
+        margin-right: 0.3rem;
     }
 }
