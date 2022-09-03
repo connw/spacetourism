@@ -4,19 +4,21 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 5% 0;
+    flex-grow: 10;
 }
 
 .page-header {
-    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;
     letter-spacing: 2.7px;
+    padding: 1rem 0;
 }
 
-.content-image img {
-    display: block;
-    margin: auto;
+.image img {
     padding: 2rem 0;
     width: 10rem;
 }
@@ -29,38 +31,37 @@ main {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 2.36px;
+    width: 100%;
 }
 
-.content-nav-item {
+.content-nav li {
     padding-bottom: 1rem;
 }
 
-.content-nav-item.selected {
+.content-nav li.selected {
     border-bottom: 3px solid #FFF;
     color: #FFF;
 }
 
-.content-header {
+.name {
     font-size: 3.5rem;
-    font-family: 'Bellefair', serif;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 }
 
-.content-desc {
+.description {
     font-size: 0.9rem;
     line-height: 1.5rem;
     max-width: 19rem;
-    margin: auto;
     padding: 0 1rem;
 }
 
-.content hr {
+main hr {
     color: #383B4B;
-    margin: 2rem auto;
+    margin: 1rem 0;
     width: 90%;
 }
 
-.content-fact-property {
+.facts__property {
     color: #D0D6F9;
     font-size: 0.8rem;
     font-family: 'Barlow Condensed', sans-serif;
@@ -68,10 +69,14 @@ main {
     padding-bottom: 1rem;
 }
 
-.content-fact-value {
+.facts__value {
     font-family: 'Bellefair', serif;
     font-size: 1.75rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.desktop {
+    display: none;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -81,43 +86,56 @@ main {
         background-size: cover;
     }
 
+    .mobile {
+        display: none;
+    }
+
+    .tablet {
+        display: flex;
+    }
+
+    main hr {
+        margin: 3rem 0 2rem;
+    }
+
     .page-header {
         font-size: 1.25rem;
         padding-left: 10%;
-        text-align: left;
-
+        align-self: flex-start;
     }
 
-    .content-image img {
+    .image img {
         width: 18rem;
-        height: auto;
-        padding: 3rem 0;
     }
 
     .content-nav {
         font-size: 1rem;
     }
 
-    .content-nav-item:not(.selected):hover {
+    .content-nav li:not(.selected):hover {
         border-bottom: 3px solid rgba(255, 255, 255, 0.5);
     }
 
-    .content-header {
+    .name {
         font-size: 5rem;
     }
 
-    .content-desc {
+    .description {
         font-size: 1rem;
         line-height: 1.75rem;
         min-width: 36rem;
     }
 
-    .content-fact {
+    .facts {
+        width: 100%;
+    }
+
+    .facts div {
         display: inline-block;
     }
 
-    .content-fact.distance {
-        padding-right: 15%;
+    .facts__distance {
+        margin-right: 15%;
     }
 }
 
@@ -128,33 +146,33 @@ main {
         background-size: cover;
     }
 
-    main {
-        display: grid;
+    .desktop {
+        display: block grid;
         gap: 0 10%;
-        grid-auto-rows: 5rem auto;
+        grid-auto-rows: 3rem auto;
+        justify-content: normal;
         text-align: left;
     }
 
     .page-header {
+        align-self: center;
         font-size: 1.75rem;
         grid-column: 1/3;
         grid-row: 1/2;
         letter-spacing: 4.72px;
     }
 
-    .content-image {
-        grid-column: 1/2 ;
+    .image {
+        grid-column: 1/2;
         grid-row: 2/3;
         justify-self: end;
     }
 
-    .content-image img {
+    .image img {
         width: 21rem;
-        height: auto;
     }
 
     .content {
-        align-self: center;
         grid-column: 2/3;
         grid-row: 2/3;
     }
@@ -163,29 +181,23 @@ main {
         justify-content: flex-start;
     }
 
-    .content-desc {
-        margin: 0;
+    .name {
+        padding: 1.5rem 0;
+    }
+
+    .description {
         min-width: 25rem;
         padding: 0;
     }
 
     .content hr {
-        margin: 2rem 0;
         width: 25rem;
     }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    main {
-        grid-auto-rows: 3rem auto;
-    }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1600px) {
-    .content-image img {
+    .image img {
         width: 27rem;
-        height: auto;
     }
 }

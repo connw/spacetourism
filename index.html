@@ -24,57 +24,32 @@
 
 <body>
 
+  <!-- Navbar -->
   <header>
-    <a class="logo" href="index.html"><img src="assets/shared/logo.svg" alt="Space tourism logo"></a>
+    <a class="site-logo" href="index.html"><img src="assets/shared/logo.svg" alt="Space tourism logo"></a>
     <hr>
-    <!-- Navbar for mobile -->
-    <img src="assets/shared/icon-hamburger.svg" class="hamb" alt="navbar open">
-    <nav class="header-nav-hamb">
-      <img src="assets/shared/icon-close.svg" class="hamb-close" alt="navbar close">
+    <img src="assets/shared/icon-hamburger.svg" class="hamburger-icon hamb" alt="Open navbar">
+    <nav class="site-nav site-nav--mobile">
+      <img src="assets/shared/icon-close.svg" class="site-nav__close--mobile" alt="Close navbar">
       <ul>
-        <li>
-          <a href="index.html"><span class="num">00</span> Home</a>
-        </li>
-        <li>
-          <a href="destination.html"><span class="num">01</span> Destination</a>
-        </li>
-        <li>
-          <a href="crew.html"><span class="num">02</span> Crew</a>
-        </li>
-        <li>
-          <a href="technology.html"><span class="num">03</span> Technology</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Navbar for desktop/tablet -->
-    <nav class="header-nav">
-      <ul>
-        <li class="selected">
-          <a href="index.html"><span class="num">00</span> Home</a>
-        </li>
-        <li>
-          <a href="destination.html"><span class="num">01</span> Destination</a>
-        </li>
-        <li>
-          <a href="crew.html"><span class="num">02</span> Crew</a>
-        </li>
-        <li>
-          <a href="technology.html"><span class="num">03</span> Technology</a>
-        </li>
+        <li class="selected"><a href="index.html"><span class="num">00</span> Home</a></li>
+        <li><a href="destination.html"><span class="num">01</span> Destination</a></li>
+        <li><a href="crew.html"><span class="num">02</span> Crew</a></li>
+        <li><a href="technology.html"><span class="num">03</span> Technology</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Content -->
   <main>
-    <div class="content">
-      <p class="content-intro">So, you want to travel to</p>
-      <p class="content-header">Space</p>
-      <p class="content-desc">Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+    <section class="content">
+      <h1 class="intro">So, you want to travel to <span class="name">Space</span></h1>
+      <p class="description">Let’s face it; if you want to go to space, you might as well genuinely go to outer space
         and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this
         world experience!</p>
-    </div>
+    </section>
     <a href="destination.html">
-      <p class="content-image">Explore</p>
+      <div class="explore">Explore</div>
     </a>
   </main>
 

@@ -8,17 +8,22 @@ body {
     display: none;
 }
 
-.mobile {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 10;
     text-align: center;
 }
 
 .page-header {
     font-size: 1rem;
     letter-spacing: 2.7px;
-    padding-bottom: 1.5rem;
+    padding: 1rem 0 2rem;
 }
 
-.content img {
+.image {
     object-fit: cover;
     width: 100%;
     height: 11rem;
@@ -26,13 +31,12 @@ body {
 
 .content-nav {
     display: flex;
-    justify-content: center;
     font-family: 'Bellefair', serif;
-    gap: 3%;
-    margin: 2rem;
+    gap: 1rem;
+    padding: 2rem;
 }
 
-.content-nav-item {
+.content-nav li {
     border: 1.5px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     display: flex;
@@ -42,29 +46,29 @@ body {
     height: 2.5rem;
 }
 
-.content-nav-item.selected {
+.content-nav li.selected {
     background-color: #FFF;
     color: #0B0D17;
 }
 
-.content-intro {
+.intro {
     color: #D0D6F9;
     font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
     letter-spacing: 2.36px;
 }
 
-.content-term {
-    font-family: 'Bellefair', serif;
+.name {
+    display: block;
     font-size: 1.5rem;
     padding: 1rem;
 }
 
-.content-desc {
+.description {
     font-size: 0.9rem;
     line-height: 1.5rem;
-    margin: auto;
     max-width: 24rem;
-    padding: 0 1rem;
+    padding: 0 1rem 1rem;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -74,42 +78,39 @@ body {
         background-size: cover;
     }
 
-    .tablet {
-        padding: 5% 0;
-    }
-
     .page-header {
-        text-align: left;
-        padding: 0 0 3rem 3rem;
+        align-self: flex-start;
+        font-size: 1.25rem;
+        padding: 5%;
     }
 
-    .content img {
+    .image {
         height: 19rem;
     }
 
     .content-nav {
-        margin: 3.5rem;
+        gap: 1.5rem;
     }
 
-    .content-nav-item {
+    .content-nav li {
         width: 3.75rem;
         height: 3.75rem;
         font-size: 1.5rem;
     }
 
-    .content-nav-item:not(.selected):hover {
+    .content-nav li:not(.selected):hover {
         border: 1px solid #FFF;
     }
 
-    .content-term {
+    .name {
         font-size: 2.5rem;
     }
 
-    .content-desc {
+    .description {
         font-size: 1rem;
         line-height: 1.75rem;
         min-width: 27rem;
-
+        padding-bottom: 5rem;
     }
 }
 
@@ -122,9 +123,14 @@ body {
 
     .desktop {
         display: grid;
-        gap: 5%;
-        grid-auto-rows: 3rem auto 20rem auto;
-        padding: 5%;
+    }
+
+    main {
+        gap: 0 5%;
+        grid-template-rows: 1fr 8fr;
+        grid-template-columns: 1fr 5fr 5fr;
+        padding: 0 0 5% 5%;
+        text-align: left;
     }
 
     .tablet {
@@ -140,81 +146,78 @@ body {
 
     .content-nav {
         flex-direction: column;
-        gap: 10%;
         grid-column: 1/2;
-        grid-row: 3/4;
-        margin: 0;
+        grid-row: 2/3;
+        padding: 0;
     }
 
-    .content-nav-item {
+    .content-nav li {
         font-size: 2rem;
         width: 5rem;
         height: 5rem;
     }
 
     .content {
-        align-self: center;
         grid-column: 2/3;
-        grid-row: 3/4;
+        grid-row: 2/3;
     }
 
-    .content-intro {
+    .intro {
         letter-spacing: 2.7px;
     }
 
-    .content-term {
-        font-size: 3rem;
+    .name {
+        font-size: 2.8rem;
         padding: 1rem 0;
     }
 
-    .content-desc {
+    .description {
         font-size: 1.1rem;
         line-height: 2rem;
         margin: 0;
         padding: 0;
     }
 
-    .content-image {
-        align-self: center;
-        justify-self: flex-end;
+    .image {
         grid-column: 3/4;
-        grid-row: 2/5;
-    }
-
-    .content-image img {
-        object-fit: cover;
-        width: 100%;
+        grid-row: 2/3;
+        height: auto;
     }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .desktop {
-        gap: 0 5%;
-        padding: 5% 0 5% 10%;
+    main {
+        gap: 0 3%;
     }
 
-    .content-term {
-        font-size: 3.5rem;
-    }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1600px) {
-
-    .desktop {
-        padding: 5%;
-    }
-
-    .content-nav {
-        justify-self: flex-end;
+    .name {
+        font-size: 3.3rem;
     }
 
     .content {
         justify-self: center;
     }
 
-    .content-image {
+    .image {
+        justify-self: flex-end;
+        width: 80%;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1600px and up) */
+@media (min-width: 1600px) {
+
+    .content-nav {
+        justify-self: flex-end;
+    }
+
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .image {
         justify-self: flex-start;
+        width: 70%;
     }
 }

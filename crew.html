@@ -23,88 +23,86 @@
 </head>
 
 <body>
-
+  <!-- Navbar -->
   <header>
-    <a class="logo" href="index.html"><img src="assets/shared/logo.svg" alt="Space tourism logo"></a>
+    <a class="site-logo" href="index.html"><img src="assets/shared/logo.svg" alt="Space tourism logo"></a>
     <hr>
-    <!-- Navbar for mobile -->
-    <img src="assets/shared/icon-hamburger.svg" class="hamb" alt="navbar open">
-    <nav class="header-nav-hamb">
-      <img src="assets/shared/icon-close.svg" class="hamb-close" alt="navbar close">
+    <img src="assets/shared/icon-hamburger.svg" class="hamburger-icon hamb" alt="Open navbar">
+    <nav class="site-nav site-nav--mobile">
+      <img src="assets/shared/icon-close.svg" class="site-nav__close--mobile" alt="Close navbar">
       <ul>
-        <li>
-          <a href="index.html"><span class="num">00</span> Home</a>
-        </li>
-        <li>
-          <a href="destination.html"><span class="num">01</span> Destination</a>
-        </li>
-        <li>
-          <a href="crew.html"><span class="num">02</span> Crew</a>
-        </li>
-        <li>
-          <a href="technology.html"><span class="num">03</span> Technology</a>
-        </li>
+        <li><a href="index.html"><span class="num">00</span> Home</a></li>
+        <li><a href="destination.html"><span class="num">01</span> Destination</a></li>
+        <li class="selected"><a href="crew.html"><span class="num">02</span> Crew</a></li>
+        <li><a href="technology.html"><span class="num">03</span> Technology</a></li>
       </ul>
     </nav>
-    <!-- Navbar for desktop/tablet -->
-    <nav class="header-nav">
-      <ul>
-        <li class="not-selected">
-          <a href="index.html"><span class="num">00</span> Home</a>
-        </li>
-        <li class="not-selected">
-          <a href="destination.html"><span class="num">01</span> Destination</a>
-        </li>
-        <li class="selected">
-          <a href="crew.html"><span class="num">02</span> Crew</a>
-        </li>
-        <li class="not-selected">
-          <a href="technology.html"><span class="num">03</span> Technology</a>
-        </li>
-      </ul>
-    </nav>
+
   </header>
 
-  <!-- Content for tablet/mobile -->
+  <!-- Content for mobile -->
   <main class="mobile">
     <h1 class="page-header"><span class="num">02</span> Meet your crew</h1>
-    <div class="content-image">
+    <div class="image">
       <img src="assets/crew/image-douglas-hurley.png" alt="Douglas Hurley photo">
     </div>
-    <div class="content">
-      <ul class="content-nav crew">
-        <li class="content-nav-item selected" value=0></li>
-        <li class="content-nav-item" value=1></li>
-        <li class="content-nav-item" value=2></li>
-        <li class="content-nav-item" value=3></li>
-      </ul>
-      <p class="content-crew-title">Commander</p>
-      <p class="content-crew-name">Douglas Hurley</p>
-      <p class="content-desc">
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched
-        into space for the third time as commander of Crew Dragon Demo-2.
-      </p>
+    <ul class="content-nav js-crew">
+      <li class="selected" value=0></li>
+      <li value=1></li>
+      <li value=2></li>
+      <li value=3></li>
+    </ul>
+    <h2 class="title">Commander</h1>
+      <h3 class="name">Douglas Hurley
+    </h2>
+    <p class="description">
+      Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched
+      into space for the third time as commander of Crew Dragon Demo-2.
+    </p>
+  </main>
+
+  <!-- Content for tablet -->
+  <main class="tablet">
+    <h1 class="page-header"><span class="num">02</span> Meet your crew</h1>
+    <h2 class="title">Commander</h2>
+    <h3 class="name">Douglas Hurley</h3>
+    <p class="description">
+      Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He
+      launched
+      into space for the third time as commander of Crew Dragon Demo-2.
+    </p>
+    <ul class="content-nav js-crew">
+      <li class="selected" value=0></li>
+      <li value=1></li>
+      <li value=2></li>
+      <li value=3></li>
+    </ul>
+    <div class="image">
+      <img src="assets/crew/image-douglas-hurley.png" alt="Douglas Hurley photo">
     </div>
   </main>
 
   <!-- Content for desktop -->
-  <main class="desktop tablet">
-    <h1 class="page-header"><span class="num">02</span> Meet your crew</h1>
-    <div class="content">
-      <p class="content-crew-title">Commander</p>
-      <p class="content-crew-name">Douglas Hurley</p>
-      <p class="content-desc">
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched
-        into space for the third time as commander of Crew Dragon Demo-2.
-      </p>
-      <ul class="content-nav crew ">
-        <li class="content-nav-item selected" value=0></li>
-        <li class="content-nav-item" value=1></li>
-        <li class="content-nav-item" value=2></li>
-        <li class="content-nav-item" value=3></li>
+  <main class="desktop">
+    <section class="content">
+      <h1 class="page-header"><span class="num">02</span> Meet your crew</h1>
+      <div>
+        <h2 class="title">Commander</h2>
+        <h3 class="name">Douglas Hurley</h3>
+        <p class="description">
+          Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He
+          launched
+          into space for the third time as commander of Crew Dragon Demo-2.
+        </p>
+      </div>
+      <ul class="content-nav js-crew">
+        <li class="selected" value=0></li>
+        <li value=1></li>
+        <li value=2></li>
+        <li value=3></li>
       </ul>
-    </div>
-    <img class="content-image" src="assets/crew/image-douglas-hurley.png" alt="Douglas Hurley photo">
+    </section>
+    <img class="image" src="assets/crew/image-douglas-hurley.png" alt="Douglas Hurley photo">
   </main>
 
   <script src="index.js"></script>

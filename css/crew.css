@@ -3,43 +3,43 @@ body {
     background-size: cover;
 }
 
-.desktop,
-.tablet {
+.tablet,
+.desktop {
     display: none;
 }
 
-.mobile,
-.tablet {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 10;
     text-align: center;
-    padding-bottom: 2rem;
 }
 
 .page-header {
     font-size: 1rem;
     letter-spacing: 2.7px;
-    padding-bottom: 2rem;
+    padding: 1rem 0;
 }
 
-.content-image {
+.image {
     border-bottom: 0.5px solid rgba(151, 151, 151, 0.5);
-    margin: auto;
-    width: 80%;
+    width: 90%;
 }
 
-.content-image img {
+.image img {
+    height: 15rem;
     margin: auto;
-    width: auto;
-    height: 13rem;
 }
 
 .content-nav {
     display: flex;
-    justify-content: center;
-    gap: 5%;
+    gap: 1rem;
     padding: 2rem 0;
 }
 
-.content-nav-item {
+.content-nav li {
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 50%;
@@ -47,27 +47,25 @@ body {
     height: 0.6rem;
 }
 
-.content-nav-item.selected {
+.content-nav li.selected {
     background-color: #FFF;
 }
 
-.content-crew-title {
+.title {
     font-family: 'Bellefair', serif;
     opacity: 0.5;
 }
 
-.content-crew-name {
+.name {
     font-size: 1.5rem;
-    font-family: 'Bellefair', serif;
     padding: 1rem 0;
 }
 
-.content-desc {
-    color: #D0D6F9;
+.description {
     font-size: 0.9rem;
     line-height: 1.5rem;
-    margin: auto;
     max-width: 19rem;
+    padding-bottom: 1rem;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -77,48 +75,52 @@ body {
         background-size: cover;
     }
 
-    .tablet {
-        display: block;
-        padding: 0;
-    }
-
     .mobile {
         display: none;
     }
 
-    .page-header {
-        font-size: 1.25rem;
-        letter-spacing: 3.38px;
-        padding: 5%;
-        text-align: left;
+    .tablet {
+        display: flex;
     }
 
-    .content-crew-title {
+    .page-header {
+        align-self: flex-start;
+        font-size: 1.25rem;
+        letter-spacing: 3.38px;
+        padding-left: 5%;
+    }
+
+    .title {
         font-size: 1.5rem;
     }
 
-    .content-crew-name {
+    .name {
         font-size: 2.5rem;
     }
 
-    .content-desc {
+    .description {
         font-size: 1rem;
         min-width: 29rem;
+        padding: 1rem;
     }
 
-    .content-image {
+    .image {
         border-bottom: none;
-        height: 35rem;
-        width: auto;
+    }
+
+    .image img {
+        height: 30rem;
     }
 
     .content-nav {
-        gap: 3%;
+        gap: 1.5rem;
+        padding: 3rem 0;
     }
 
-    .content-nav-item:not(.selected):hover {
+    .content-nav li:not(.selected):hover {
         background-color: rgba(255, 255, 255, 0.5);
     }
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -128,79 +130,75 @@ body {
         background-size: cover;
     }
 
-    .desktop {
-        display: grid;
-        grid-auto-rows: 3rem auto;
-        padding: 5% 5% 2%;
+    .tablet {
+        display: none;
+    }
 
+    .desktop {
+        display: flex;
+    }
+
+    main {
+        flex-direction: row;
+        padding: 0 5%;
     }
 
     .page-header {
         font-size: 1.75rem;
-        grid-column: 1/3;
-        grid-row: 1/2;
         letter-spacing: 4.72px;
         padding: 0;
     }
 
     .content {
-        align-self: flex-end;
-        grid-column: 1/2;
-        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
         text-align: left;
+        width: 50%;
     }
 
-    .content-crew-title {
+    .title {
         font-size: 2rem;
     }
 
-    .content-crew-name {
-        font-size: 2.8rem;
-        padding: 1rem 0;
-    }
-
-    .content-desc {
+    .description {
         font-size: 1.1rem;
         line-height: 2rem;
-        margin: 0;
         min-width: 28rem;
+        padding: 0;
     }
 
     .content-nav {
-        gap: 5%;
-        justify-content: flex-start;
-        padding: 5rem 0 2rem;
+        padding: 0;
     }
 
-    .content-nav-item {
+    .content-nav li {
         width: 0.9rem;
         height: 0.9rem;
     }
 
-    .content-image {
-        grid-column: 2/3;
-        grid-row: 1/3;
+    .image {
+        width: 45%;
     }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .desktop {
-        gap: 0 10%;
-    }
 
-    .content-crew-name {
-        font-size: 3.5rem;
+    .image {
+        width: 35%;
     }
 }
 
-/* XX-Large devices (larger desktops, 1400px and up) */
+/* XX-Large devices (larger desktops, 1600px and up) */
 @media (min-width: 1600px) {
-    .desktop {
-        padding: 5%;
-    }
 
-    .content {
-        justify-self: flex-end;
+    .name {
+        font-size: 3.5rem;
+    }
+    
+    .image {
+        width: 30%;
     }
 }

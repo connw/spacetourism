@@ -3,40 +3,53 @@ body {
     background-size: cover;
 }
 
+main,
+.content,
+.explore {
+    display: flex;
+}
+
 main {
-    padding: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 10;
 }
 
 .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     text-align: center;
+    padding: 1rem 0;
 }
 
-.content-intro {
+.intro {
     color: #D0D6F9;
     font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
     letter-spacing: 2.7px;
 }
 
-.content-header {
-    font-family: 'Bellefair', serif;
+.name {
+    display: block;
     font-size: 5rem;
     line-height: 6.25rem;
     letter-spacing: 2.7px;
     padding: 1rem 0;
 }
 
-.content-desc {
+.description {
     font-size: 0.9rem;
     line-height: 1.5rem;
-    margin: 0 auto;
     max-width: 22rem;
+    padding: 0 1rem;
 }
 
-.content-image {
+.explore {
     background-color: #FFF;
     border-radius: 50%;
     color: #0B0D17;
-    display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Bellefair', serif;
@@ -44,7 +57,7 @@ main {
     height: 9.3rem;
     width: 9.3rem;
     letter-spacing: 1.25px;
-    margin: 2rem auto;
+    margin: 2rem 0;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -54,59 +67,28 @@ main {
         background-size: cover;
     }
 
-    .content-intro {
+    .intro {
         font-size: 1.25rem;
         letter-spacing: 3.38px;
     }
 
-    .content-header {
+    .intro span {
         font-size: 9.3rem;
         line-height: 9.3rem;
-        padding: 2rem 0;
     }
 
-    .content-desc {
+    .description {
         line-height: 1.75rem;
         min-width: 25rem;
     }
 
-    .content-image {
+    .explore {
         font-size: 2rem;
         height: 15rem;
         width: 15rem;
-        margin: 5rem auto;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    body {
-        background: url("../assets/home/background-home-desktop.jpg") no-repeat center fixed;
-        background-size: cover;
     }
 
-    main {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        padding: 15% 10%;
-    }
-
-    .content {
-        text-align: left;
-    }
-
-    .content-desc {
-        font-size: 1.1rem;
-        margin: 0;
-        min-width: 28rem;
-    }
-    
-    .content-image {
-        margin: 0;
-    }
-
-    .content-image:hover {
+    .explore:hover {
         animation: pulse-animation 3s infinite;
     }
 
@@ -121,12 +103,33 @@ main {
     }
 }
 
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    main {
-        padding: 12% 10%;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    body {
+        background: url("../assets/home/background-home-desktop.jpg") no-repeat center fixed;
+        background-size: cover;
     }
 
+    main {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        margin: 0;
+        min-width: 28rem;
+        padding: 0;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
     @keyframes pulse-animation {
         0% {
             box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5);
